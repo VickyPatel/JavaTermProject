@@ -29,7 +29,7 @@ public class Person {
     @GET
     @Produces("application/json")
     public Response get() {
-      return Response.ok(getResults("SELECT * FROM questions")).build();
+      return Response.ok(getResults("SELECT * FROM person")).build();
     }
     
      public static JsonArray getResults(String sql, String... params) {
@@ -46,7 +46,7 @@ public class Person {
             while (rs.next()) {
                 array.add(Json.createObjectBuilder()
                         .add("id", rs.getInt("id"))
-                        .add("question", rs.getString("question"))
+                        .add("name", rs.getString("name"))
                 );
             }
             json = array.build();
