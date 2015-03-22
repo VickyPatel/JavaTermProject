@@ -36,6 +36,7 @@ public class Person {
         JsonArray json = null;
         try {
             Connection conn = Connect.getConnection();
+            System.out.println("hello");
             PreparedStatement pstmt = conn.prepareStatement(sql);
             for (int i = 0; i < params.length; i++) {
                 pstmt.setString(i + 1, params[i]);
