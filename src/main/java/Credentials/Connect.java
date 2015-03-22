@@ -39,7 +39,7 @@ public class Connect {
      public static JsonArray getResults(String sql, String... params) {
         JsonArray json = null;
         try {
-            Connection conn = Connect.getConnection();
+            Connection conn = getConnection();
             System.out.println("hello");
             PreparedStatement pstmt = conn.prepareStatement(sql);
             for (int i = 0; i < params.length; i++) {
